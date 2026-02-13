@@ -2,8 +2,8 @@ const bcrypt = require('bcryptjs');
 const db = require('../config/db');
 
 async function createAdmin() {
-    const username = 'admin';
-    const password = 'adminpassword123'; // Change this in production!
+    const username = 'TECHTHUNDER2018PORTFOLIO';
+    const password = 'Nish@Bhumika2018'; // Change this in production!
 
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
