@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Nishant Kumar, a Full Stack Java Developer specializing in scalable backend systems and modern frontend experiences.">
+    <meta name="keywords" content="Nishant Kumar, Full Stack Developer, Java, Spring Boot, React, Portfolio, Web Developer, Software Engineer">
+    <meta name="author" content="Nishant Kumar">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nishant.io/">
+    <meta property="og:title" content="Nishant Kumar | Full Stack Developer">
+    <meta property="og:description" content="Building scalable, high-performance applications with modern Java & creative frontend experiences.">
+    <meta property="og:image" content="https://nishant.io/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nishant.io/">
+    <meta property="twitter:title" content="Nishant Kumar | Full Stack Developer">
+    <meta property="twitter:description" content="Building scalable, high-performance applications with modern Java & creative frontend experiences.">
+    <meta property="twitter:image" content="https://nishant.io/assets/og-image.jpg">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+    
+    <nav class="navbar">
+        <a href="#" class="logo">Nishant<span class="accent">.</span>io</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact" class="btn-primary">Connect</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <span class="subtitle">Hello, I'm</span>
+            <h1 class="glitch-text" data-text="Nishant">Nishant </h1>
+            <h2 class="role">Full Stack Developer</h2>
+            <p class="description">Building scalable, high-performance applications with modern Java & creative frontend experiences.</p>
+            <div class="cta-group">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" class="btn-secondary">Contact Me</a>
+                <a href="#" target="_blank" class="btn-secondary resume-btn" style="display: none; border-color: var(--accent-color); color: var(--accent-color);">Resume</a>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About <span class="accent">Me</span></h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I focus on building efficient, scalable backend systems with Java and crafting intuitive user interfaces. My passion lies in solving complex problems through clean code and modern architecture.</p>
+                    <ul class="about-details">
+                        <li><i class="fas fa-code"></i> Java Enthusiast</li>
+                        <li><i class="fas fa-layer-group"></i> Full Stack Development</li>
+                        <li><i class="fas fa-brain"></i> Data Structures & Algorithms</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <div class="code-block">
+                        <pre><code>class Developer {
+  String name = "Nishant Kumar";
+  String[] stack = {
+    "Java", "Spring Boot",
+    "React", "SQL"
+  };
+  
+  void build() {
+    while(alive) {
+      code();
+      learn();
+    }
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="experience" class="section">
+        <div class="container timeline-container">
+            <h2 class="section-title">My <span class="accent">Journey</span></h2>
+            <div class="timeline">
+                <div class="timeline-item left visible">
+                    <div class="timeline-content">
+                        <span class="date">2020 - 2021</span>
+                        <h4>Secondary Education</h4>
+                        <p>BRDAV Public School, Begusarai</p>
+                        <p>Percentage: <span class="accent">94.4%</span></p>
+                        <p class="highlight">Selected for NTSE Second Stage (2021)</p>
+                    </div>
+                </div>
+                <div class="timeline-item right visible">
+                    <div class="timeline-content">
+                        <span class="date">2022 - 2023</span>
+                        <h4>Senior Secondary Education</h4>
+                        <p>St. Joseph Public School, Begusarai</p>
+                        <p>Percentage: <span class="accent">84.6%</span></p>
+                    </div>
+                </div>
+                <div class="timeline-item left visible">
+                    <div class="timeline-content">
+                        <span class="date">2024 - Present</span>
+                        <h4>B.Tech in CSE</h4>
+                        <p>National Institute of Technology, Patna</p>
+                        <p>Current CGPA: <span class="accent">7.84</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="section">
+        <div class="container">
+            <h2 class="section-title">Coding <span class="accent">Stats</span></h2>
+            <div class="stats-grid">
+                <div class="stat-card" id="github-card">
+                    <span style="color: var(--text-secondary);">Loading...</span>
+                </div>
+                <div class="stat-card" id="leetcode-card">
+                    <span style="color: var(--text-secondary);">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
+            <div class="skills-grid">
+                <!-- Skills will be populated or static here -->
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span>Java</span>
+                        <!-- <span>Spring Boot</span>
+                        <span>Microservices</span>
+                        <span>Hibernate</span> -->
+                        <span>REST APIs</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript (ES6+)</span>
+                        <span>React</span>
+                        <span>Tailwind</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Database & Tools</h3>
+                    <div class="skill-tags">
+                        <span>MySQL</span>
+                        <!-- <span>PostgreSQL</span> -->
+                        <span>MongoDB</span>
+                        <span>Git/GitHub</span>
+                        <!-- <span>Docker</span> -->
+                        <!-- <span>Maven</span> -->
+                         
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Concepts</h3>
+                    <div class="skill-tags">
+                        <span>DSA</span>
+                        <span>OOP</span>
+                        <!-- <span>System Design</span>
+                        <span>Agile</span> -->
+                        <span>Algorithms</span>
+                        <span>Data Structures</span>
+                        <span>Operating System</span>
+                        <span>Computer Networks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+            <div id="projects-container" class="projects-grid">
+                <!-- Projects will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>nishant999908@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <p><a href="https://www.linkedin.com/in/nishant-kumar-b56aaa316/" target="_blank">linkedin.com/in/nishant-kumar</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <p><a href="https://github.com/TECHTHUNDER2018" target="_blank">github.com/TECHTHUNDER2018</a></p>
+                    </div>
+                    <div class="contact-item twitter-link-container" style="display: none;">
+                        <i class="fab fa-twitter"></i>
+                        <p><a href="#" target="_blank" class="twitter-url">@nishant</a></p>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form" action="https://formspree.io/f/" method="POST">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                    <p id="form-status" style="margin-top: 1rem; color: var(--accent-color); font-size: 0.9rem;"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Nishant Kumar. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com/TECHTHUNDER2018" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/nishant-kumar-b56aaa316/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank" class="twitter-icon" style="display: none;"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:nishant999908@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/projects.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/stats.js"></script>
+</body>
+</html>
