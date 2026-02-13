@@ -8,7 +8,11 @@ async function setupDatabase() {
         const schema = fs.readFileSync(schemaPath, 'utf8');
         const queries = schema.split(';').filter(query => query.trim().length > 0);
 
-        console.log('Running Database Migration...');
+        console.log('Starting Database Migration...');
+        console.log('DB Host:', process.env.DB_HOST);
+        console.log('DB User:', process.env.DB_USER);
+
+        console.log('Reading schema query...');
 
         for (const query of queries) {
             await db.query(query);
