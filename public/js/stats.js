@@ -9,14 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
     async function fetchGitHubStats() {
         try {
             // 1. User Profile Data
-            const res = await fetch(`https://api.github.com/users/${githubUsername}`);
+            const res = await fetch(`https://api.github.com/users/${githubUsername}?t=${new Date().getTime()}`);
             if (!res.ok) throw new Error('GitHub API Error');
             const data = await res.json();
 
             // 2. Contribution Graph
-            const chartUrl = `https://ghchart.rshah.org/00f3ff/${githubUsername}`;
+            const chartUrl = `https://ghchart.rshah.org/00f3ff/${githubUsername}?t=${new Date().getTime()}`;
             // 3. Streak Stats (using github-readme-streak-stats)
-            const streakUrl = `https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=dark&hide_border=true&background=111111&ring=00f3ff&currStreakLabel=00f3ff`;
+            const streakUrl = `https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=dark&hide_border=true&background=111111&ring=00f3ff&currStreakLabel=00f3ff&t=${new Date().getTime()}`;
 
             githubCard.innerHTML = `
                 <div class="stat-header">
