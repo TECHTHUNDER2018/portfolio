@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node scripts/setupDb.js && node scripts/createAdmin.js && node server.js",
+    "start": "node scripts/setupDb.js && node scripts/createAdmin.js && node scripts/seedProfile.js && node scripts/seedSkills.js && node scripts/seedProjects.js && node server.js",
     "dev": "nodemon server.js",
     "seed:admin": "node scripts/createAdmin.js",
     "setup:db": "node scripts/setupDb.js"
