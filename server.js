@@ -4,6 +4,13 @@ const cors = require('cors');
 const helmet = require('helmet');
 require('dotenv').config();
 
+
+const setupDatabase = require('./scripts/setupDb');
+const createAdmin = require('./scripts/createAdmin');
+const seedProfile = require('./scripts/seedProfile');
+const seedSkills = require('./scripts/seedSkills');
+const seedProjects = require('./scripts/seedProjects');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -54,6 +61,23 @@ app.get(/(.*)/, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+
+(async () => {
+    try {
+        console.log('Running database setup and seeding...');
+        await setupDatabase();
+        await createAdmin();
+        await seedProfile();
+        await seedSkills();
+        await seedProjects();
+        console.log('Database initialized successfully.');
+    } catch (error) {
+        console.error('Failed to initialize database:', error);
+        // We'll continue starting the server, but log the error visibly.
+        // In some cases, we might want to exit, but for now let's try to serve content.
+    }
+
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+})();

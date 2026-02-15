@@ -29,11 +29,16 @@ async function seedSkills() {
             console.log(`Inserted skill: ${skill.name}`);
         }
         console.log('Skills seeding complete.');
-        process.exit(0);
+        // process.exit(0);
     } catch (error) {
         console.error('Error seeding skills:', error);
-        process.exit(1);
+        throw error;
+        // process.exit(1);
     }
 }
 
-seedSkills();
+if (require.main === module) {
+    seedSkills().then(() => process.exit(0)).catch(() => process.exit(1));
+}
+
+module.exports = seedSkills;

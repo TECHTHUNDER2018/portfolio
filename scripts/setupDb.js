@@ -20,11 +20,16 @@ async function setupDatabase() {
         }
 
         console.log('Database Setup Complete!');
-        process.exit(0);
+        // process.exit(0);
     } catch (error) {
         console.error('Database Setup Failed:', error);
-        process.exit(1);
+        throw error;
+        // process.exit(1);
     }
 }
 
-setupDatabase();
+if (require.main === module) {
+    setupDatabase().then(() => process.exit(0)).catch(() => process.exit(1));
+}
+
+module.exports = setupDatabase;

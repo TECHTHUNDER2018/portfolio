@@ -32,11 +32,16 @@ async function seedProjects() {
             console.log(`Inserted: ${project.title}`);
         }
         console.log('Project seeding complete.');
-        process.exit(0);
+        // process.exit(0);
     } catch (error) {
         console.error('Error seeding projects:', error);
-        process.exit(1);
+        throw error;
+        // process.exit(1);
     }
 }
 
-seedProjects();
+if (require.main === module) {
+    seedProjects().then(() => process.exit(0)).catch(() => process.exit(1));
+}
+
+module.exports = seedProjects;

@@ -11,16 +11,22 @@ async function createAdmin() {
 
         if (rows.length > 0) {
             console.log('Admin user already exists.');
-            process.exit(0);
+            // process.exit(0);
+            return;
         }
 
         await db.query('INSERT INTO users (username, password_hash) VALUES (?, ?)', [username, hashedPassword]);
         console.log(`Admin user created.\nUsername: ${username}\nPassword: ${password}`);
-        process.exit(0);
+        // process.exit(0);
     } catch (error) {
         console.error('Error creating admin:', error);
-        process.exit(1);
+        throw error;
+        // process.exit(1);
     }
 }
 
-createAdmin();
+if (require.main === module) {
+    createAdmin().then(() => process.exit(0)).catch(() => process.exit(1));
+}
+
+module.exports = createAdmin;
