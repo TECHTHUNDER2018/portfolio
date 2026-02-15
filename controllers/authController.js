@@ -22,7 +22,8 @@ exports.login = async (req, res) => {
         const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
         res.json({ token, message: 'Login successful' });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Server error' });
+        console.error('Login Error:', error);
+        if (!process.env.JWT_SECRET) console.error('CRITICAL: JWT_SECRET is missing!');
+        res.status(500).json({ message: 'Server error', error: error.message });
     }
 };
