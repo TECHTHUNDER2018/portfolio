@@ -2,8 +2,13 @@ const bcrypt = require('bcryptjs');
 const db = require('../config/db');
 
 async function createAdmin() {
-    const username = 'TECHTHUNDER2018PORTFOLIO';
-    const password = 'Nish@Bhumika2018'; // Change this in production!
+    const username = process.env.ADMIN_USERNAME || 'TECHTHUNDER2018PORTFOLIO';
+    const password = process.env.ADMIN_PASSWORD;
+
+    if (!password) {
+        console.warn('⚠️  ADMIN_PASSWORD not set in .env. Skipping admin creation to prevent insecurity.');
+        return;
+    }
 
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
