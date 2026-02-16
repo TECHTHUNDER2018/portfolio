@@ -15,8 +15,8 @@ async function createAdmin() {
         const [rows] = await db.query('SELECT * FROM users WHERE username = ?', [username]);
 
         if (rows.length > 0) {
-            console.log('Admin user already exists.');
-            // process.exit(0);
+            console.log('Admin user exists. Updating password from environment variable...');
+            await db.query('UPDATE users SET password_hash = ? WHERE username = ?', [hashedPassword, username]);
             return;
         }
 
