@@ -30,3 +30,21 @@ exports.getStats = async (req, res) => {
         res.status(500).json({ message: 'Server Error' });
     }
 };
+
+exports.getLeetCodeStats = async (req, res) => {
+    try {
+        const { username } = req.params;
+        // Using global fetch (Node 18+)
+        const response = await fetch(`https://leetcode-stats-api.herokuapp.com/${username}`);
+
+        if (!response.ok) {
+            return res.status(response.status).json({ message: 'Failed to fetch from LeetCode API' });
+        }
+
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error('LeetCode Proxy Error:', error);
+        res.status(500).json({ message: 'Error fetching LeetCode stats' });
+    }
+};

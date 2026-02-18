@@ -50,7 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- LeetCode Stats ---
     async function fetchLeetCodeStats() {
         try {
-            const res = await fetch(`https://leetcode-stats-api.herokuapp.com/${leetcodeUsername}`);
+            // Use our backend proxy to avoid CORS issues
+            const res = await fetch(`/api/analytics/leetcode/${leetcodeUsername}`);
             if (!res.ok) throw new Error('LeetCode API Error');
             const data = await res.json();
 

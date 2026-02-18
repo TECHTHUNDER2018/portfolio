@@ -9,4 +9,7 @@ router.post('/track', analyticsController.trackVisit);
 // Protected route to view stats
 router.get('/stats', auth, analyticsController.getStats);
 
+// Proxy route for LeetCode stats (Public)
+router.get('/leetcode/:username', analyticsController.getLeetCodeStats);
+
 module.exports = router;
